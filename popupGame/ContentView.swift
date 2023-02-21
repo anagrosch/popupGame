@@ -14,7 +14,7 @@ struct MyButton: ButtonStyle {
             .font(.system(size: 15, weight: Font.Weight.bold))
             .foregroundColor(.white)
             .frame(width: 100, height: 40)
-            .background(RoundedRectangle(cornerRadius: 8).fill(Color.cyan))
+            .background(RoundedRectangle(cornerRadius: 8).fill(.purple))
     }
 }
 
@@ -45,8 +45,6 @@ struct ContentView: View {
                     Button("Yes!") {
                         yesButtonClicked.toggle()
                     }.buttonStyle(MyButton())
-                        //.position(x: 196, y: 73)
-                        //.position(x: 0, y: 10)
                         .shadow(color: .blue, radius: isShadow ? 5 : 0)
                         .onHover { hover in
                             isShadow = hover
@@ -70,46 +68,7 @@ struct ContentView: View {
             
         }
     }
-    
-    /*
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }*/
 }
-/*
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()*/
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

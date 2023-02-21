@@ -2,7 +2,7 @@
 //  popupGameApp.swift
 //  popupGame
 //
-//  Created by Coding on 2/19/23.
+//  Created by Anastasia Grosch on 2/19/23.
 //
 
 import SwiftUI
@@ -15,6 +15,9 @@ struct popupGameApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .frame(minWidth: 500, idealWidth: 500, maxWidth: 500,
+                        minHeight: 300, idealHeight: 300, maxHeight: 800,
+                        alignment: .center)
         }
     }
 }
