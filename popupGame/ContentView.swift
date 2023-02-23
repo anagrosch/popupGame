@@ -9,50 +9,68 @@ import SwiftUI
 import CoreData
 
 struct MyButton: ButtonStyle {
+    var width: CGFloat
+    var height: CGFloat
+    var size: CGFloat
+    var opacity: CGFloat = 1
     func makeBody(configuration: Configuration) -> some View { configuration.label
             .padding()
-            .font(.system(size: 15, weight: Font.Weight.bold))
+            .font(.system(size: size, weight: Font.Weight.bold))
             .foregroundColor(.white)
-            .frame(width: 100, height: 40)
-            .background(RoundedRectangle(cornerRadius: 8).fill(.purple))
+            .frame(width: width, height: height)
+            .background(RoundedRectangle(cornerRadius: 8).fill(.purple.opacity(opacity)))
+    }
+}
+
+struct NextButton: ViewModifier {
+    @State private var hover = false
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .shadow(color: .blue, radius: hover ? 5 : 0)
+            .onHover { isHovered in
+                hover = isHovered
+            }
+    }
+}
+
+struct MyTitle: ViewModifier {
+    var size: CGFloat
+    func body(content: Content) -> some View {
+        content
+        .font(.system(size: size))
+        .bold()
+        .padding()
+        //.background()
     }
 }
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
     @State private var hoverNoButton = false
-    @State private var yesButtonClicked = false
+    @State private var goToNext = false
     @State private var isShadow = false
     
     var body: some View {
-        VStack(alignment: .center) {
-            Text(yesButtonClicked ? "I knew it!" : "Are you stupid?")
-                .padding()
-                .font(.system(size: 30))
-                .bold()
-                .frame(width: 500, height: yesButtonClicked ? 190 : 120, alignment: .bottom)
-                .position(x: 250, y: 70)
-            
-            if yesButtonClicked {
-                Text("Hehe I got you :)")
-                    .padding()
-                    .font(.system(size: 15))
-                    .frame(width: 500, height: 100, alignment: .top)
-            }
-            
-            if !yesButtonClicked {
+        if goToNext { ButtonsDoneView() }
+        else {
+            VStack(alignment: .center) {
+                Text("Are you stupid?")
+                    .modifier(MyTitle(size: 30))
+                    .frame(width: 500, height: 120, alignment: .bottom)
+                    .position(x: 250, y: 70)
+                
                 HStack {
                     Button("Yes!") {
-                        yesButtonClicked.toggle()
-                    }.buttonStyle(MyButton())
-                        .shadow(color: .blue, radius: isShadow ? 5 : 0)
+                        goToNext.toggle()
+                    }.buttonStyle(MyButton(width: 100, height: 40, size: 15))
+                        .shadow(color: .indigo, radius: isShadow ? 5 : 0)
                         .onHover { hover in
                             isShadow = hover
                         }
                     
                     Button("No") {
                         //do nothing
-                    }.buttonStyle(MyButton())
+                    }.buttonStyle(MyButton(width: 100, height: 40, size: 15))
                         .position(x: hoverNoButton ? 200 : 50, y: hoverNoButton ? 0 : 20)
                         .onHover { isHovered in
                             hoverNoButton = isHovered
@@ -65,14 +83,13 @@ struct ContentView: View {
                     //empty
                 }.position(x: 60, y: 10)
             }
-            
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
             .frame(width: 500, height: 300)
     }
 }
