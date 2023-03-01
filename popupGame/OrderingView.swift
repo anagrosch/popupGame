@@ -4,6 +4,9 @@
 //
 //  Created by Anastasia Grosch on 2/22/23.
 //
+//  Asks user to determine order of unorderable list.
+//  Trick: There is no order and the correct answer is
+//  checking all boxes -> user can't guess order
 
 import SwiftUI
 
@@ -73,22 +76,22 @@ struct OrderingView: View {
                 Text("Can you figure out the order?")
                     .modifier(MyTitle(size: 30))
                 
-                HStack {
-                    Text("1")
-                        .padding([.leading, .trailing, .top])
-                        .font(.system(size: 15))
-                    Text("2")
-                        .padding([.leading, .trailing, .top])
-                        .font(.system(size: 15))
-                    Text("3")
-                        .padding([.leading, .trailing, .top])
-                        .font(.system(size: 15))
-                    Text("4")
-                        .padding([.leading, .trailing, .top])
-                        .font(.system(size: 15))
-                }.padding(.leading, 145)
-                
                 VStack(alignment: .trailing) {
+                    HStack {
+                        Text("1")
+                            .padding([.leading, .trailing, .top])
+                            .font(.system(size: 15))
+                        Text("2")
+                            .padding([.leading, .trailing, .top])
+                            .font(.system(size: 15))
+                        Text("3")
+                            .padding([.leading, .trailing, .top])
+                            .font(.system(size: 15))
+                        Text("4")
+                            .padding([.leading, .trailing, .top])
+                            .font(.system(size: 15))
+                    }.padding(.leading, 145)
+                    
                     SingleRow(text: "Call for a refill         ", a: $a1, b: $b1, c: $c1, d: $d1)
                         .background(.black.opacity(0.3))
                     SingleRow(text: "Take a walk             ", a: $a2, b: $b2, c: $c2, d: $d2)

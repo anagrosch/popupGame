@@ -4,6 +4,7 @@
 //
 //  Created by Anastasia Grosch on 2/22/23.
 //
+//  Transition from OrderingView to GaugeView
 
 import SwiftUI
 
@@ -49,6 +50,7 @@ struct WaitText: ViewModifier {
         if appear.wrappedValue {
             Text("Just keep waiting, just keep waiting, just keep \nwaiting, waiting, waiting...")
                 .multilineTextAlignment(.center)
+                .foregroundColor(.green)
         }
     }
 }
@@ -63,16 +65,18 @@ struct OrderingDoneView: View {
     var subtitleText: String = ""
     
     var body: some View {
-        if goToNext { EndView() }
+        if goToNext { RedButtonView() }
         else {
             VStack(alignment: .center) {
                 Text(titleText)
                     .modifier(MyTitle(size: 30))
                     .border(.green, width: 3)
+                    .padding([.leading, .trailing], 20)
                 
                 Text(subtitleText)
                     .padding()
                     .font(.system(size: 15))
+                    .foregroundColor(.green)
                 
                 Image(systemName: "person.fill")
                     .resizable()

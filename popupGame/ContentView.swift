@@ -4,6 +4,10 @@
 //
 //  Created by Anastasia Grosch on 2/19/23.
 //
+//  Start page.
+//  Asks user a question with yes of no button answers.
+//  Trick: No button moves when hovered -> user can only
+//  click "Yes" button.
 
 import SwiftUI
 import CoreData
@@ -41,7 +45,6 @@ struct MyTitle: ViewModifier {
         .font(.system(size: size))
         .bold()
         .padding()
-        //.background()
     }
 }
 

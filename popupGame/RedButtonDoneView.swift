@@ -1,26 +1,26 @@
 //
-//  ButtonsTrickView.swift
+//  RedButtonDoneView.swift
 //  popupGame
 //
-//  Created by Anastasia Grosch on 2/20/23.
+//  Created by Anastasia Grosch on 2/28/23.
 //
-//  Transition page from ContentView to CheckboxesView
+//  Transition from RedButtonView to EndView
 
 import SwiftUI
 
-struct ButtonsDoneView: View {
+struct RedButtonDoneView: View {
     @State private var goToNext = false
+    var subtitleText: String = ""
     
     var body: some View {
-        if goToNext { CheckboxesView() }
+        if goToNext { GaugeView() }
         else {
             VStack(alignment: .center) {
-                Text("I knew it!")
+                Text("INCORRECT")
                     .modifier(MyTitle(size: 30))
-                    .border(.purple, width: 3)
-                    .padding([.leading, .trailing], 20)
+                    .border(.red, width: 3)
                 
-                Text("Hehe I got you")
+                Text(subtitleText)
                     .padding()
                     .font(.system(size: 15))
                 
@@ -33,8 +33,8 @@ struct ButtonsDoneView: View {
     }
 }
 
-struct ButtonsDoneView_Previews: PreviewProvider {
+struct RedButtonDoneView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonsDoneView()
+        RedButtonDoneView()
     }
 }

@@ -4,6 +4,9 @@
 //
 //  Created by Anastasia Grosch on 2/21/23.
 //
+//  Asks user to check all 4 checkboxes.
+//  Trick: First and last checkboxes are flipple (checking
+//  one will uncheck the other) -> user can never check all
 
 import SwiftUI
 

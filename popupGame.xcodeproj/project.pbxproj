@@ -19,6 +19,10 @@
 		173E6A5D29A713B20025CC67 /* OrderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173E6A5C29A713B20025CC67 /* OrderingView.swift */; };
 		173E6A5F29A7251C0025CC67 /* OrderingDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173E6A5E29A7251C0025CC67 /* OrderingDoneView.swift */; };
 		173E6A6129A7C0520025CC67 /* EndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173E6A6029A7C0520025CC67 /* EndView.swift */; };
+		173E6A6529A846540025CC67 /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173E6A6429A846540025CC67 /* GaugeView.swift */; };
+		173E6A6729AEF58B0025CC67 /* GaugeDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173E6A6629AEF58B0025CC67 /* GaugeDoneView.swift */; };
+		173E6A6929AEFBD70025CC67 /* RedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173E6A6829AEFBD70025CC67 /* RedButtonView.swift */; };
+		173E6A6B29AF018D0025CC67 /* RedButtonDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173E6A6A29AF018D0025CC67 /* RedButtonDoneView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		173E6A5C29A713B20025CC67 /* OrderingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingView.swift; sourceTree = "<group>"; };
 		173E6A5E29A7251C0025CC67 /* OrderingDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingDoneView.swift; sourceTree = "<group>"; };
 		173E6A6029A7C0520025CC67 /* EndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndView.swift; sourceTree = "<group>"; };
+		173E6A6429A846540025CC67 /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
+		173E6A6629AEF58B0025CC67 /* GaugeDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeDoneView.swift; sourceTree = "<group>"; };
+		173E6A6829AEFBD70025CC67 /* RedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedButtonView.swift; sourceTree = "<group>"; };
+		173E6A6A29AF018D0025CC67 /* RedButtonDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedButtonDoneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,10 @@
 				173E6A5829A70ABC0025CC67 /* CheckboxDoneView.swift */,
 				173E6A5C29A713B20025CC67 /* OrderingView.swift */,
 				173E6A5E29A7251C0025CC67 /* OrderingDoneView.swift */,
+				173E6A6829AEFBD70025CC67 /* RedButtonView.swift */,
+				173E6A6A29AF018D0025CC67 /* RedButtonDoneView.swift */,
+				173E6A6429A846540025CC67 /* GaugeView.swift */,
+				173E6A6629AEF58B0025CC67 /* GaugeDoneView.swift */,
 				173E6A6029A7C0520025CC67 /* EndView.swift */,
 				17178C8B29A2B17B007CDDF5 /* Assets.xcassets */,
 				17178C9029A2B17B007CDDF5 /* Persistence.swift */,
@@ -167,10 +179,14 @@
 				173E6A5529A486CC0025CC67 /* ButtonsDoneView.swift in Sources */,
 				17178C9429A2B17C007CDDF5 /* popupGame.xcdatamodeld in Sources */,
 				173E6A5D29A713B20025CC67 /* OrderingView.swift in Sources */,
+				173E6A6B29AF018D0025CC67 /* RedButtonDoneView.swift in Sources */,
 				173E6A5929A70ABC0025CC67 /* CheckboxDoneView.swift in Sources */,
 				173E6A5F29A7251C0025CC67 /* OrderingDoneView.swift in Sources */,
 				17178C9129A2B17B007CDDF5 /* Persistence.swift in Sources */,
 				17178C8A29A2B175007CDDF5 /* ContentView.swift in Sources */,
+				173E6A6729AEF58B0025CC67 /* GaugeDoneView.swift in Sources */,
+				173E6A6929AEFBD70025CC67 /* RedButtonView.swift in Sources */,
+				173E6A6529A846540025CC67 /* GaugeView.swift in Sources */,
 				17178C8829A2B175007CDDF5 /* popupGameApp.swift in Sources */,
 				173E6A5729A48DE40025CC67 /* CheckboxesView.swift in Sources */,
 			);

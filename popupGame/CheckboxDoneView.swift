@@ -4,6 +4,7 @@
 //
 //  Created by Anastasia Grosch on 2/22/23.
 //
+//  Transition page from CheckboxesView to OrderingView
 
 import SwiftUI
 
